@@ -8,7 +8,7 @@ function Home(userDetails) {
 
     const handleDeploy = async () => {
         try {
-            const url = 'http://localhost:4000/deploy';
+            const url = `${process.env.REACT_APP_API_URL}/deploy`;
             const response = await axios.post(url, {}, { withCredentials: true });
             console.log(response);
         } catch (err) {
