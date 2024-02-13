@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function DeploymentButton({ type }) {
   const [deploying, setDeploying] = useState(false);
@@ -14,11 +15,11 @@ function DeploymentButton({ type }) {
     }
 
     try {
-      const response = await fetch(endpoint, { method: 'POST', withCredentials: true });
-      const data = await response.text(); // Récupérer la réponse en tant que texte
+      const response = await axios.post(endpoint, {}, { withCredentials: true });
+      const responseData = response.data; // Récupérer les données de la réponse
 
-      console.log('Server response:', data);
-      setOutput(data); // Mettre à jour la sortie avec la réponse du serveur
+      console.log('Server response:', responseData);
+      setOutput(responseData); // Mettre à jour la sortie avec la réponse du serveur
     } catch (error) {
       console.error('Error:', error);
       setOutput('Error deploying: ' + error.message);
