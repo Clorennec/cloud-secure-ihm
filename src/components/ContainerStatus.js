@@ -13,7 +13,7 @@ function ContainerStatus({ type }) {
     useEffect(() => {
         const fetchContainerStatus = async () => {
             try {
-                const response = await axios.get(endpoint);
+                const response = await axios.get(endpoint, { withCredentials: true });
                 setIsRunning(response.data.isRunning);
             } catch (error) {
                 console.error('Erreur lors de la récupération de l\'état du conteneur:', error);
