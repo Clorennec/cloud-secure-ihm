@@ -3,6 +3,7 @@ import axios from 'axios';
 
 function ContainerStatus({ type }) {
     const [isRunning, setIsRunning] = useState(false);
+    let endpoint;
     if (type === 'backend') {
         endpoint = `${process.env.REACT_APP_API_URL}/api/status/back`;
     } else if (type === 'frontend') {
