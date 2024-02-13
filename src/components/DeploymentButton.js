@@ -8,9 +8,9 @@ function DeploymentButton({ type }) {
     setDeploying(true);
     let endpoint;
     if (type === 'backend') {
-      endpoint = 'http://localhost:5000/api/deploy/back';
+      endpoint = `${process.env.REACT_APP_API_URL}/api/deploy/back`;
     } else if (type === 'frontend') {
-      endpoint = 'http://localhost:5000/api/deploy/front';
+      endpoint = `${process.env.REACT_APP_API_URL}/api/deploy/front`;
     }
 
     try {
