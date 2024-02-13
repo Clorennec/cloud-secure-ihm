@@ -1,4 +1,5 @@
 import DeploymentButton from "../components/DeploymentButton";
+import ContainerStatus from "../components/ContainerStatus";
 
 function Home({ user }) {
   const logout = () => {
@@ -11,10 +12,12 @@ function Home({ user }) {
       <div style={{ display: 'flex', justifyContent: 'space-between', width: '80%', margin: 'auto' }}>
         <div style={{ textAlign: 'left' }}>
           <h2>Frontend</h2>
+		  <ContainerStatus type="frontend"/>
           <DeploymentButton type="frontend" />
         </div>
         <div style={{ textAlign: 'right' }}>
           <h2>Backend</h2>
+		  <ContainerStatus type="backend"/>
           <DeploymentButton type="backend" />
         </div>
       </div>

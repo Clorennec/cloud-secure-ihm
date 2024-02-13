@@ -33,7 +33,7 @@ function DeploymentButton({ type }) {
         {deploying ? `Déploiement du ${type} en cours...` : `Lancer le déploiement du ${type}`}
       </button>
       <div style={{ width: '500px', height: '400px', overflow: 'auto', border: '1px solid #ccc', padding: '10px' }}>
-        <pre style={{ whiteSpace: 'pre-wrap' }}>{output}</pre>
+        <pre style={{ whiteSpace: 'pre-wrap',  textAlign: 'left' }}>{output}</pre>
       </div>
     </div>
   );
