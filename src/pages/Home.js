@@ -1,37 +1,26 @@
 import DeploymentButton from "../components/DeploymentButton";
 
-function Home(userDetails) {
-	const user = userDetails.user;
-	const logout = () => {
-		window.open(`${process.env.REACT_APP_API_URL}/auth/logout`, "_self");
-	};
+function Home({ user }) {
+  const logout = () => {
+    window.open(`${process.env.REACT_APP_API_URL}/auth/logout`, "_self");
+  };
 
-	return (
-		<div>
-			<h1>Home</h1>
-			<div>
-				<div>
-					<h2>Profile</h2>
-					<img
-						src={user.picture}
-						alt="profile"
-					/>
-					<input
-						type="text"
-						defaultValue={user.name}
-						placeholder="UserName"
-					/>
-					<button onClick={logout}>
-						Log Out
-					</button>
-					<div>
-						<DeploymentButton type="backend" />
-						<DeploymentButton type="frontend" />
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <div>
+      <h1>Bonjour {user.name}</h1> {/* Afficher "Bonjour" suivi du nom du profil */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', width: '80%', margin: 'auto' }}>
+        <div style={{ textAlign: 'left' }}>
+          <h2>Frontend</h2>
+          <DeploymentButton type="frontend" />
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          <h2>Backend</h2>
+          <DeploymentButton type="backend" />
+        </div>
+      </div>
+      <button onClick={logout}>Déconnexion</button> {/* Bouton de déconnexion */}
+    </div>
+  );
 }
 
 export default Home;
