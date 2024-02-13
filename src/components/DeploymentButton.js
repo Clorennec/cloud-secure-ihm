@@ -14,7 +14,7 @@ function DeploymentButton({ type }) {
     }
 
     try {
-      const response = await fetch(endpoint, { method: 'POST' });
+      const response = await fetch(endpoint, { method: 'POST', withCredentials: true });
       const data = await response.text(); // Récupérer la réponse en tant que texte
 
       console.log('Server response:', data);
