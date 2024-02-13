@@ -16,10 +16,9 @@ function DeploymentButton({ type }) {
 
     try {
       const response = await axios.post(endpoint, {}, { withCredentials: true });
-      const responseData = response.data; // Récupérer les données de la réponse
-
-      console.log('Server response:', responseData);
-      setOutput(responseData); // Mettre à jour la sortie avec la réponse du serveur
+      const { data } = response;
+      console.log('Server response:', data);
+      setOutput(data.output); // Mettre à jour la sortie avec les données d'output
     } catch (error) {
       console.error('Error:', error);
       setOutput('Error deploying: ' + error.message);
