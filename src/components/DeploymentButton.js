@@ -18,12 +18,12 @@ function DeploymentButton({ type }) {
       const response = await axios.post(endpoint, {}, { withCredentials: true });
       const { data } = response;
       console.log('Server response:', data);
-      setOutput(data.output); // Mettre à jour la sortie avec les données d'output
+      setOutput(data.output); 
     } catch (error) {
       console.error('Error:', error);
       setOutput('Error deploying: ' + error.message);
     } finally {
-      setDeploying(false); // Mettre à jour l'état du déploiement une fois terminé (quelle que soit la réponse)
+      setDeploying(false); 
     }
   };
 

@@ -11,7 +11,7 @@ function Login() {
 			<div>
 				<div>
 					<button onClick={googleAuth}>
-						<span>Sing in with Google2S</span>
+						<span>Se connecter avec Google</span>
 					</button>
 				</div>
 			</div>

@@ -8,7 +8,7 @@ function Home({ user }) {
 
   return (
     <div>
-      <h1>Bonjour {user.name}</h1> {/* Afficher "Bonjour" suivi du nom du profil */}
+      <h1>Bonjour {user.name}</h1> 
       <div style={{ display: 'flex', justifyContent: 'space-between', width: '80%', margin: 'auto' }}>
         <div style={{ textAlign: 'left' }}>
           <h2>Frontend</h2>
@@ -24,7 +24,7 @@ function Home({ user }) {
           <DeploymentButton type="backend" />
         </div>
       </div>
-      <button onClick={logout}>Déconnexion</button> {/* Bouton de déconnexion */}
+      <button onClick={logout}>Déconnexion</button> 
     </div>
   );
 }
