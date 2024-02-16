@@ -12,12 +12,15 @@ function Home({ user }) {
       <div style={{ display: 'flex', justifyContent: 'space-between', width: '80%', margin: 'auto' }}>
         <div style={{ textAlign: 'left' }}>
           <h2>Frontend</h2>
-		  <ContainerStatus type="frontend"/>
+		      <ContainerStatus type="frontend"/>
           <DeploymentButton type="frontend" />
         </div>
         <div style={{ textAlign: 'right' }}>
           <h2>Backend</h2>
-		  <ContainerStatus type="backend"/>
+		      <ContainerStatus type="backend"/>
+          <a href="http://localhost:9090/" target="_blank">
+            Vers SonarQube
+          </a>
           <DeploymentButton type="backend" />
         </div>
       </div>
